@@ -130,7 +130,6 @@ class AuthService {
         Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error == nil {
                 
-                
                 guard let data = response.data else { return }
                 
                 do {
@@ -149,9 +148,6 @@ class AuthService {
                     print(error)
                 }
                 
-                
-                
-            
             }else {
                 completion(false)
                 debugPrint(response.result.error as Any)
