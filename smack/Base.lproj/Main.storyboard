@@ -129,6 +129,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logBtn" destination="RnR-5T-1P1" id="fUp-0t-rYh"/>
                         <outlet property="userImg" destination="8y7-r5-0Aa" id="7Gs-n1-aqu"/>
                         <segue destination="K1k-Ga-1h2" kind="show" identifier="toLogin" id="wyl-DX-hWJ"/>
                     </connections>
