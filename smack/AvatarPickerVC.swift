@@ -53,9 +53,7 @@ class AvatarPickerVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         var numberOfColumns: CGFloat = 3
         
         if UIScreen .main.bounds.width > 320 {
-    
             numberOfColumns = 4
-        
         }
         
         let spaceBetweenCells: CGFloat = 10
