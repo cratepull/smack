@@ -75,6 +75,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-Bq-Whs">
                                 <rect key="frame" x="265" y="83" width="22" height="22"/>
                                 <state key="normal" image="addChannelButton"/>
+                                <connections>
+                                    <action selector="addChannelPressed:" destination="KpW-Mt-BVW" eventType="touchUpInside" id="A3L-r1-hEa"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8y7-r5-0Aa" customClass="CircleImage" customModule="smack" customModuleProvider="target">
                                 <rect key="frame" x="12" y="584" width="75" height="75"/>
