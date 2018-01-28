@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B13A092201E4C22002AB4AC /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13A091201E4C22002AB4AC /* MessageService.swift */; };
 		2B13A094201E4C82002AB4AC /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13A093201E4C82002AB4AC /* Channel.swift */; };
+		2B13A098201E5A57002AB4AC /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B13A097201E5A57002AB4AC /* ChannelCell.swift */; };
 		2B59C48F201BF53F00CBA599 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B59C48E201BF53E00CBA599 /* CircleImage.swift */; };
 		2B59C49D201D5EBB00CBA599 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B59C49B201D5EBB00CBA599 /* ProfileVC.swift */; };
 		2B59C49E201D5EBB00CBA599 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B59C49C201D5EBB00CBA599 /* ProfileVC.xib */; };
@@ -36,6 +37,7 @@
 		203805A393D3146D90FD4638 /* Pods_smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B13A091201E4C22002AB4AC /* MessageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		2B13A093201E4C82002AB4AC /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		2B13A097201E5A57002AB4AC /* ChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		2B59C48E201BF53E00CBA599 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		2B59C49B201D5EBB00CBA599 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		2B59C49C201D5EBB00CBA599 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				2BEAF62E2017D96F00D9AB1E /* RoundedButton.swift */,
 				2BFEBE22201967A900E72FDC /* AvatarCell.swift */,
 				2B59C48E201BF53E00CBA599 /* CircleImage.swift */,
+				2B13A097201E5A57002AB4AC /* ChannelCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B59C49D201D5EBB00CBA599 /* ProfileVC.swift in Sources */,
+				2B13A098201E5A57002AB4AC /* ChannelCell.swift in Sources */,
 				2BEAF6212016B33200D9AB1E /* ChannelVC.swift in Sources */,
 				2BFEBE212019652100E72FDC /* AvatarPickerVC.swift in Sources */,
 				2BEAF62F2017D96F00D9AB1E /* RoundedButton.swift in Sources */,

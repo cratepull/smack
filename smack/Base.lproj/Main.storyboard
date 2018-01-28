@@ -87,7 +87,7 @@
                                 <rect key="frame" x="0.0" y="113" width="375" height="459"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fm6-jl-vtN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="channelCell" id="Fm6-jl-vtN" customClass="ChannelCell" customModule="smack" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fm6-jl-vtN" id="GBY-DD-muO">
@@ -107,6 +107,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="channelName" destination="SY9-hl-dBx" id="hRO-yy-yrU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -131,6 +134,7 @@
                     </view>
                     <connections>
                         <outlet property="logBtn" destination="RnR-5T-1P1" id="fUp-0t-rYh"/>
+                        <outlet property="tableView" destination="SH8-ut-HzZ" id="5Yk-vk-I51"/>
                         <outlet property="userImg" destination="8y7-r5-0Aa" id="7Gs-n1-aqu"/>
                         <segue destination="K1k-Ga-1h2" kind="show" identifier="toLogin" id="wyl-DX-hWJ"/>
                     </connections>
