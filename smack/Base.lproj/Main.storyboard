@@ -189,7 +189,7 @@
                                     <constraint firstAttribute="height" constant="50" id="ivg-aw-zgI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -197,6 +197,9 @@
                                         <real key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="K1k-Ga-1h2" eventType="touchUpInside" id="gm7-cQ-aMl"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="3Um-zb-uta">
                                 <rect key="frame" x="62.5" y="160" width="250" height="86"/>
@@ -247,6 +250,10 @@
                                     <action selector="createAccountPressed:" destination="K1k-Ga-1h2" eventType="touchUpInside" id="Hnv-bJ-7rS"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Ejl-Ww-iLE">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -257,12 +264,17 @@
                             <constraint firstItem="Tqc-V0-HQq" firstAttribute="centerX" secondItem="DGH-TW-wuW" secondAttribute="centerX" id="Tan-5b-JYk"/>
                             <constraint firstItem="tGr-Xn-6L1" firstAttribute="top" secondItem="IJ2-jZ-kh9" secondAttribute="bottom" constant="60" id="ZkE-Gr-A1k"/>
                             <constraint firstItem="xbF-ST-xrE" firstAttribute="trailing" secondItem="DGH-TW-wuW" secondAttribute="trailingMargin" id="aTW-3N-Yqe"/>
+                            <constraint firstItem="Ejl-Ww-iLE" firstAttribute="centerX" secondItem="DGH-TW-wuW" secondAttribute="centerX" id="djX-Lg-2wC"/>
                             <constraint firstItem="3Um-zb-uta" firstAttribute="centerX" secondItem="DGH-TW-wuW" secondAttribute="centerX" id="hxH-lO-Ym0"/>
                             <constraint firstItem="DBj-zM-EhX" firstAttribute="centerX" secondItem="DGH-TW-wuW" secondAttribute="centerX" id="rzU-z1-2tT"/>
                             <constraint firstItem="Tqc-V0-HQq" firstAttribute="top" secondItem="DBj-zM-EhX" secondAttribute="bottom" id="szh-Z7-lH5"/>
+                            <constraint firstItem="Ejl-Ww-iLE" firstAttribute="centerY" secondItem="DGH-TW-wuW" secondAttribute="centerY" constant="-100" id="xSA-r9-03u"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="jEf-jb-9M5" id="lVY-VB-wbu"/>
+                        <outlet property="spinner" destination="Ejl-Ww-iLE" id="Y3N-PL-SlI"/>
+                        <outlet property="usernameTxt" destination="ngR-Iv-qET" id="ntu-70-fDk"/>
                         <segue destination="auz-1e-pWh" kind="show" identifier="toCreateAccount" id="Lc3-BF-SUd"/>
                     </connections>
                 </viewController>

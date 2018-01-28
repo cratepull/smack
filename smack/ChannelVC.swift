@@ -24,6 +24,10 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setUpUserInfo()
+    }
+    
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
@@ -42,8 +46,7 @@ class ChannelVC: UIViewController {
         
     }
     
-    
-    @objc func userDataDidChange(_ notif: Notification){
+    func setUpUserInfo(){
         
         if AuthService.instance.isLoggedIn {
             logBtn.setTitle(UserDataService.instance.name, for: UIControlState.normal)
@@ -54,5 +57,11 @@ class ChannelVC: UIViewController {
             userImg.image = UIImage(named: "menuProfileIcon")
             userImg.backgroundColor = UIColor.clear
         }
+        
+    }
+    
+    
+    @objc func userDataDidChange(_ notif: Notification){
+        setUpUserInfo()
     }
 }
