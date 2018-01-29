@@ -608,6 +608,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="channelNameLabel" destination="bNx-6A-w8R" id="imv-uY-3eP"/>
                         <outlet property="menuBtn" destination="0JV-iX-VAQ" id="eMn-3K-6p2"/>
                     </connections>
                 </viewController>

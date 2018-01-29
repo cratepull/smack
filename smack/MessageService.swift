@@ -15,6 +15,7 @@ class MessageService {
     static let instance  = MessageService()
     
     var channels = [Channel]()
+    var selectedChannel : Channel?
     
     //
     
@@ -39,10 +40,12 @@ class MessageService {
                         self.channels.append(channel)
                         
                     }
-
+                    
+                    NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
+                    
                     completion(true)
                     
-                    print(self.channels)
+                    
                     
                 } catch {
                     print(error)
@@ -56,5 +59,9 @@ class MessageService {
             }
             
         }
+    }
+    
+    func clearChannels(){
+        channels.removeAll()
     }
 }
