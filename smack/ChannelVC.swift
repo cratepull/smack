@@ -29,6 +29,11 @@ class ChannelVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
     
     override func viewDidAppear(_ animated: Bool) {
         setUpUserInfo()
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func addChannelPressed(_ sender: Any) {
