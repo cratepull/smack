@@ -13,10 +13,16 @@ class ChatVC: UIViewController {
     @IBOutlet weak var menuBtn: UIButton!
     
     
+    @IBOutlet weak var messageTextBox: UITextField!
     @IBOutlet weak var channelNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.bindToKeyboard()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        view.addGestureRecognizer(tap)
+        
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -35,6 +41,27 @@ class ChatVC: UIViewController {
         }
     }
     
+    @IBAction func sendMsgPressed(_ sender: Any) {
+        
+        if AuthService.instance.isLoggedIn{
+            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+            guard let message = messageTextBox.text else {return}
+            
+            
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.name, channelId: channelId, completion: { (success) in
+                
+                if success {
+                    self.messageTextBox.text = ""
+                    self.messageTextBox.resignFirstResponder()
+                
+                }
+            })
+        
+        }
+        
+        
+        
+    }
     
     @objc func userDataDidChange(_ notif: Notification){
         if AuthService.instance.isLoggedIn {
@@ -42,6 +69,10 @@ class ChatVC: UIViewController {
         }else{
             channelNameLabel.text = "Plase Log in"
         }
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
     
     @objc func channelSelected(_ notif: Notification){
@@ -73,14 +104,9 @@ class ChatVC: UIViewController {
     }
     
     func getMessages(){
-        
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
-        
         MessageService.instance.findAllMessegesForChannel(channelId: channelId) { (success) in
             
         }
-    
-    
     }
-    
 }
