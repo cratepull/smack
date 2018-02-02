@@ -79,4 +79,22 @@ class SocketService: NSObject {
         }
     }
     
+    func getTypingUsers(_ completionHandler: @escaping (_ typingUsers: [String: String]) -> Void) {
+        
+        socket.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String: String] else { return }
+            completionHandler(typingUsers)
+        }
+    }
+    
+    func startTyping() {
+        guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+        socket.emit("startType", UserDataService.instance.name, channelId)
+    }
+    
+    func stopTyping() {
+        guard let channelId = MessageService.instance.selectedChannel?.id else {return}
+        socket.emit("stopType", UserDataService.instance.name, channelId)
+    }
+    
 }
