@@ -56,7 +56,7 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
             guard let message = messageTextBox.text else {return}
             
             
-            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.name, channelId: channelId, completion: { (success) in
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId, completion: { (success) in
                 
                 if success {
                     self.messageTextBox.text = ""
