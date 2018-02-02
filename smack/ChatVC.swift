@@ -28,6 +28,10 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         view.addGestureRecognizer(tap)
         
@@ -36,9 +40,9 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.channelSelected(_:)), name: NOTIF_CHANNELS_SELECTED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNELS_SELECTED, object: nil)
         
         
         if AuthService.instance.isLoggedIn {
@@ -64,11 +68,7 @@ class ChatVC: UIViewController, UITableViewDelegate,UITableViewDataSource {
                 
                 }
             })
-        
         }
-        
-        
-        
     }
     
     @objc func userDataDidChange(_ notif: Notification){
